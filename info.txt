@@ -25,3 +25,89 @@ firstName: e.parameter.firstName,
     workDescription: e.parameter.workDescription,
     email: e.parameter.email,
     mobile: e.parameter.mobile,
+
+    function doPost(e) {
+  const folder = DriveApp.getFolderById("1rT2lZHY5T-1KmvcML7MD9mU_RjJG45n4"); // আপনার ফোল্ডার ID
+
+  // ছবি ও NID ব্লব তৈরি
+  const photoBlob = e.parameter.photo && e.parameters.photo[0].getAs("image/jpeg");
+  const nidBlob = e.parameter.nid && e.parameters.nid[0].getAs("image/jpeg");
+
+  // Google Drive-এ ফাইল সংরক্ষণ
+  const photoFile = folder.createFile(photoBlob).setName("Photo_" + Date.now());
+  const nidFile = folder.createFile(nidBlob).setName("NID_" + Date.now());
+
+  const photoUrl = photoFile.getUrl();
+  const nidUrl = nidFile.getUrl();
+
+  // Google Sheet-এ তথ্য সংরক্ষণ
+  const sheet = SpreadsheetApp.openById("1F9jfa8xkUeht0dsmw1VkJbwHxTCjkDxRXL0V321Y_H0").getSheetByName("Sheet1"); // Sheet1 নামে শীট থাকলে
+  sheet.appendRow([
+    new Date(),
+    e.parameter.firstName,
+    e.parameter.lastName,
+    e.parameter.fatherFirstName,
+    e.parameter.fatherLastName,
+    e.parameter.motherFirstName,
+    e.parameter.motherLastName,
+    e.parameter.permanentHouse,
+    e.parameter.permanentWard,
+    e.parameter.permanentVillage,
+    e.parameter.permanentThana,
+    e.parameter.permanentDistrict,
+    e.parameter.currentWard,
+    e.parameter.currentVillage,
+    e.parameter.currentThana,
+    e.parameter.currentDistrict,
+    e.parameter.dob,
+    e.parameter.gender,
+    e.parameter.bloodGroup,
+    e.parameter.profession,
+    e.parameter.workDescription,
+    e.parameter.email,
+    e.parameter.mobile,
+    photoUrl,
+    nidUrl
+  ]);
+
+  // PDF তৈরির জন্য টেমপ্লেট ব্যবহার
+  const template = HtmlService.createTemplateFromFile("template");
+
+  template.data = {
+    firstName: e.parameter.firstName,
+    lastName: e.parameter.lastName,
+    fatherFirstName: e.parameter.fatherFirstName,
+    fatherLastName: e.parameter.fatherLastName,
+    motherFirstName: e.parameter.motherFirstName,
+    motherLastName: e.parameter.motherLastName,
+    permanentHouse: e.parameter.permanentHouse,
+    permanentWard: e.parameter.permanentWard,
+    permanentVillage: e.parameter.permanentVillage,
+    permanentThana: e.parameter.permanentThana,
+    permanentDistrict: e.parameter.permanentDistrict,
+    currentWard: e.parameter.currentWard,
+    currentVillage: e.parameter.currentVillage,
+    currentThana: e.parameter.currentThana,
+    currentDistrict: e.parameter.currentDistrict,
+    dob: e.parameter.dob,
+    gender: e.parameter.gender,
+    bloodGroup: e.parameter.bloodGroup,
+    profession: e.parameter.profession,
+    workDescription: e.parameter.workDescription,
+    email: e.parameter.email,
+    mobile: e.parameter.mobile,
+    photoBase64: Utilities.base64Encode(photoBlob.getBytes()),
+    nidBase64: Utilities.base64Encode(nidBlob.getBytes()),
+  };
+
+  const html = template.evaluate().getContent();
+  const pdf = Utilities.newBlob(html, "text/html").getAs("application/pdf");
+  const pdfFile = folder.createFile(pdf).setName("Barakah_Trust_Member_" + Date.now() + ".pdf");
+
+  return ContentService.createTextOutput(JSON.stringify({
+    status: "success",
+    pdfUrl: pdfFile.getUrl(),
+    photoLink: photoUrl,
+    nidLink: nidUrl
+  })).setMimeType(ContentService.MimeType.JSON);
+}
