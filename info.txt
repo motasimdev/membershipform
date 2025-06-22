@@ -3,43 +3,7 @@ about-
 I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release.Currently, I'm focused on the backend development.
 
 
-firstName: e.parameter.firstName,
-    lastName: e.parameter.lastName,
-    fatherFirstName: e.parameter.fatherFirstName,
-    fatherLastName: e.parameter.fatherLastName,
-    motherFirstName: e.parameter.motherFirstName,
-    motherLastName: e.parameter.motherLastName,
-    permanentHouse: e.parameter.permanentHouse,
-    permanentWard: e.parameter.permanentWard,
-    permanentVillage: e.parameter.permanentVillage,
-    permanentThana: e.parameter.permanentThana,
-    permanentDistrict: e.parameter.permanentDistrict,
-    currentWard: e.parameter.currentWard,
-    currentVillage: e.parameter.currentVillage,
-    currentThana: e.parameter.currentThana,
-    currentDistrict: e.parameter.currentDistrict,
-    dob: e.parameter.dob,
-    gender: e.parameter.gender,
-    bloodGroup: e.parameter.bloodGroup,
-    profession: e.parameter.profession,
-    workDescription: e.parameter.workDescription,
-    email: e.parameter.email,
-    mobile: e.parameter.mobile,
-
-    function doPost(e) {
-  const folder = DriveApp.getFolderById("1rT2lZHY5T-1KmvcML7MD9mU_RjJG45n4"); // আপনার ফোল্ডার ID
-
-  // ছবি ও NID ব্লব তৈরি
-  const photoBlob = e.parameter.photo && e.parameters.photo[0].getAs("image/jpeg");
-  const nidBlob = e.parameter.nid && e.parameters.nid[0].getAs("image/jpeg");
-
-  // Google Drive-এ ফাইল সংরক্ষণ
-  const photoFile = folder.createFile(photoBlob).setName("Photo_" + Date.now());
-  const nidFile = folder.createFile(nidBlob).setName("NID_" + Date.now());
-
-  const photoUrl = photoFile.getUrl();
-  const nidUrl = nidFile.getUrl();
-
+f
   // Google Sheet-এ তথ্য সংরক্ষণ
   const sheet = SpreadsheetApp.openById("1F9jfa8xkUeht0dsmw1VkJbwHxTCjkDxRXL0V321Y_H0").getSheetByName("Sheet1"); // Sheet1 নামে শীট থাকলে
   sheet.appendRow([
@@ -70,7 +34,14 @@ firstName: e.parameter.firstName,
     nidUrl
   ]);
 
-  // PDF তৈরির জন্য টেমপ্লেট ব্যবহার
+========================================
+  
+  function doPost(e) {
+  const folder = DriveApp.getFolderById("1rT2lZHY5T-1KmvcML7MD9mU_RjJG45n4");
+
+  const photoBlob = e.parameter.photo && e.parameters.photo[0].getAs("image/jpeg");
+  const nidBlob = e.parameter.nid && e.parameters.nid[0].getAs("image/jpeg");
+
   const template = HtmlService.createTemplateFromFile("template");
 
   template.data = {
@@ -102,12 +73,11 @@ firstName: e.parameter.firstName,
 
   const html = template.evaluate().getContent();
   const pdf = Utilities.newBlob(html, "text/html").getAs("application/pdf");
-  const pdfFile = folder.createFile(pdf).setName("Barakah_Trust_Member_" + Date.now() + ".pdf");
+  const file = folder.createFile(pdf).setName("Barakah_Trust_Member.pdf");
 
   return ContentService.createTextOutput(JSON.stringify({
     status: "success",
-    pdfUrl: pdfFile.getUrl(),
-    photoLink: photoUrl,
-    nidLink: nidUrl
+    pdfUrl: file.getUrl()
   })).setMimeType(ContentService.MimeType.JSON);
 }
+
