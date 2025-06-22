@@ -1,0 +1,27 @@
+about-
+
+I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release.Currently, I'm focused on the backend development.
+
+
+firstName: e.parameter.firstName,
+    lastName: e.parameter.lastName,
+    fatherFirstName: e.parameter.fatherFirstName,
+    fatherLastName: e.parameter.fatherLastName,
+    motherFirstName: e.parameter.motherFirstName,
+    motherLastName: e.parameter.motherLastName,
+    permanentHouse: e.parameter.permanentHouse,
+    permanentWard: e.parameter.permanentWard,
+    permanentVillage: e.parameter.permanentVillage,
+    permanentThana: e.parameter.permanentThana,
+    permanentDistrict: e.parameter.permanentDistrict,
+    currentWard: e.parameter.currentWard,
+    currentVillage: e.parameter.currentVillage,
+    currentThana: e.parameter.currentThana,
+    currentDistrict: e.parameter.currentDistrict,
+    dob: e.parameter.dob,
+    gender: e.parameter.gender,
+    bloodGroup: e.parameter.bloodGroup,
+    profession: e.parameter.profession,
+    workDescription: e.parameter.workDescription,
+    email: e.parameter.email,
+    mobile: e.parameter.mobile,

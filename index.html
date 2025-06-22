@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barakah Trust Membership Form</title>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body>
+
+    <div class="max-w-[1170px] m-auto">
+        <form id="membershipForm"
+            action="https://script.google.com/macros/s/AKfycbxZm9orCtd6YITb9tcdBsV5sv3mGAsQf_YA6nSWb1mH0la3U9TR0oBqw7nKMU7fimEI3A/exec" method="POST"
+            enctype="multipart/form-data">
+            <div class="max-w-[450px] md:max-w-[450px] m-auto py-4 mb-[400px] bg-[#816d52]">
+                <img src="images/flyerdesign_06042025_144344.jpg" alt="flyerdesign_06042025_144344.jpg"
+                    class="w-[400px] m-auto">
+
+                <div class="max-w-[350px] md:max-w-[350px] bg-[#D2B48C] m-auto mt-4 pb-5">
+                    <div class="text-center">
+                        <h1 class="pt-2 font-bold text-black">বারাকাহ ট্রাস্ট</h1>
+                        <p class="font-medium text-black">সদস্য ফরম</p>
+                    </div>
+
+
+                    <div class="flex w-full flex-col">
+                        <div class="divider"></div>
+                    </div>
+
+
+                    <div class="ml-4">
+
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">আপনার ছবি দিন:</legend>
+                            <input type="file" class="file-input input-sm rounded-md" name="photo" accept="image/*"
+                                required />
+
+                            <!-- ============================= -->
+                            <legend class="fieldset-legend">নাম:</legend>
+                            <input type="text" class="input input-sm" name="firstName" placeholder="" />
+                            <p class="label">First Name</p>
+                            <input type="text" class="input input-sm" name="lastName" placeholder="" />
+                            <p class="label">Last Name</p>
+
+                            <!-- ===================== -->
+                            <legend class="fieldset-legend mt-3">পিতার নাম:</legend>
+                            <input type="text" class="input input-sm" name="fatherFirstName" placeholder="" />
+                            <p class="label">First Name</p>
+                            <input type="text" class="input input-sm" name="fatherLastName" placeholder="" />
+                            <p class="label">Last Name</p>
+
+                            <!-- ===================== -->
+                            <legend class="fieldset-legend mt-3">মাতার নাম:</legend>
+                            <input type="text" class="input input-sm" name="motherFirstName" placeholder="" />
+                            <p class="label">First Name</p>
+                            <input type="text" class="input input-sm" name="motherFirstName" placeholder="" />
+                            <p class="label">Last Name</p>
+
+                            <!-- ===================== -->
+                            <legend class="fieldset-legend mt-3">স্থায়ী ঠিকানা:</legend>
+                            <input type="text" class="input input-sm" name="permanentHouse"
+                                placeholder="বাড়ির নাম এবং হোল্ডিং নং" />
+                            <p class="label">বাড়ির নাম এবং হোল্ডিং নং</p>
+                            <input type="text" class="input input-sm" name="permanentWard" placeholder="ওয়ার্ড নং" />
+                            <p class="label">ওয়ার্ড নং</p>
+                            <input type="text" class="input input-sm" name="permanentVillage" placeholder="গ্রাম" />
+                            <p class="label">গ্রাম</p>
+                            <input type="text" class="input input-sm" name="permanentThana" placeholder="উপজেলা/থানা" />
+                            <p class="label">উপজেলা/থানা</p>
+                            <input type="text" class="input input-sm" name="permanentDistrict" placeholder="জেলা" />
+                            <p class="label">জেলা</p>
+
+                            <!-- ===================== -->
+                            <legend class="fieldset-legend mt-3">বর্তমান ঠিকানা:</legend>
+                            <input type="text" class="input input-sm" name="currentWard" placeholder="ওয়ার্ড নং" />
+                            <p class="label">ওয়ার্ড নং</p>
+                            <input type="text" class="input input-sm" name="currentVillage" placeholder="গ্রাম" />
+                            <p class="label">গ্রাম/এলাকা</p>
+                            <input type="text" class="input input-sm" name="currentThana" placeholder="উপজেলা/থানা" />
+                            <p class="label">উপজেলা/থানা</p>
+                            <input type="text" class="input input-sm" name="currentDistrict" placeholder="জেলা" />
+                            <p class="label">জেলা</p>
+
+                            <!-- =================== -->
+                            <legend class="fieldset-legend mt-3">জন্ম তারিখ:</legend>
+                            <input type="date" class="input input-sm" name="dob" placeholder="" />
+                        </fieldset>
+
+                        <!-- ==================== -->
+                        <legend class="fieldset-legend mt-3">জেন্ডার:</legend>
+                        <input type="radio" name="gender" value="male" checked> Male
+                        <input type="radio" name="gender" value="female"> Female
+
+                        <!-- ================== -->
+                        <legend class="fieldset-legend mt-3">রক্তের গ্রুপ:</legend>
+                        <input type="text" class="input input-sm" name="bloodGroup" placeholder="রক্তের গ্রুপ" />
+
+                        <!-- ==================== -->
+                        <legend class="fieldset-legend mt-3">পেশা</legend>
+                        <select class="select" name="profession">
+                            <option disabled selected>নির্বাচন করুন</option>
+                            <option>ছাত্র</option>
+                            <option>চাকুরী</option>
+                            <option>ব্যবসা</option>
+                            <option>চাকুরী নেই</option>
+                            <option>অবসরপ্রাপ্ত</option>
+                        </select>
+                        <!-- ============== -->
+                        <textarea name="workDescription" class="border bg-white rounded-md mt-10 pl-1 mt-3" cols="30"
+                            rows="7"
+                            placeholder="আপনার কাজ সম্পর্কে কিছু লিখুন দুই লাইনে। ছাত্র হলে আপনার পড়াশোনা কতটুকু লিখুন। যাতে একে অপরকে সহযোগিতা করতে পারি। আপনার কাজ না থাকলে বা কাজ প্রয়োজন হলে সেটাও লিখুন।"></textarea>
+
+                        <!-- ========================== -->
+                        <legend class="fieldset-legend mt-3">ইমেইল:</legend>
+                        <input class="input input-sm" type="email" name="email" placeholder="" />
+
+                        <!-- ========================== -->
+                        <legend class="fieldset-legend mt-3">মোবাইল নং:</legend>
+                        <input type="text" class="input input-sm" name="mobile" placeholder="01" />
+
+                        <!-- =========================== -->
+                        <legend class="fieldset-legend mt-3">NID কার্ডের ছবি দিন:</legend>
+                        <div class="">
+                            <input type="file" class="file-input input-sm" name="nid" />
+                        </div>
+
+                        <!-- ==================== -->
+                        <legend class="fieldset-legend mt-3">শর্তাবলি:</legend>
+                        <p>
+                            ১. ইসলামী মূল্যবোধে সচেষ্ট থাকবো।<br>
+                            ২.সামাজিক উন্নয়নে সর্বোচ্চ সহযোগিতা করব।<br>
+                            ৩.মাসিক ১০০ টাকা অনুদান প্রদান করব।
+                        </p>
+                        <div class="mt-5">
+                            <input type="checkbox" name="agreed" class="checkbox" /> I agree <span
+                                class="text-blue-500">to terms &
+                                conditions</span>.
+                        </div>
+
+                        <!-- ================ -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-soft btn-warning px-[120px] mr-4 mt-10">Submit</button>
+                        </div>
+
+                        <!-- ======================== -->
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <!-- <script src="js/script.js"></script> -->
+</body>
+
+</html>
