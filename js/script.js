@@ -8,7 +8,7 @@ document
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzJ6XLYtBpxQk_g-QxfA4NlV1vIqhe5uJlGoGKg_KiptXLCQeL-PIhqDvrWX35ZzOv1mw/exec",
+        "https://script.google.com/macros/s/AKfycbzizC-kQxvVXwhjNyy4HWeNQf6f0ONaLak07RdS3AS88RGQvQC2LMqNrUfFv0xHKlRPwg/exec",
         {
           method: "POST",
           body: formData,
