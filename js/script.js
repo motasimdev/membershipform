@@ -6,7 +6,7 @@
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyKw_7Pz_QNPRScto3IIFXPlvqv6xIpplyh8qk-HqDPfymgAi_7_OeRigOQs9q0t5M/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwao9Fo_ygTQ7YXkUtXztEM58AhqxNaNK6FDYeWp1MsNFK7yAZyYZo6jgCRlnbldcM5xQ/exec", {
         method: "POST",
         body: formData
       });
