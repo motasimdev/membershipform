@@ -33,29 +33,29 @@
                     <div class="ml-4">
 
                         <fieldset class="fieldset">
-                            <legend class="fieldset-legend">আপনার ছবি দিন:</legend>
+                            <!-- <legend class="fieldset-legend">আপনার ছবি দিন:</legend>
                             <input type="file" class="file-input input-sm rounded-md" name="photo" accept="image/*"
-                                required />
+                                required /> -->
 
                             <!-- ============================= -->
                             <legend class="fieldset-legend">নাম:</legend>
-                            <input type="text" class="input input-sm" name="firstName" placeholder="" />
+                            <input type="text" class="input input-sm" name="firstName" placeholder="" required/>
                             <p class="label">First Name</p>
-                            <input type="text" class="input input-sm" name="lastName" placeholder="" />
+                            <input type="text" class="input input-sm" name="lastName" placeholder="" required/>
                             <p class="label">Last Name</p>
 
                             <!-- ===================== -->
                             <legend class="fieldset-legend mt-3">পিতার নাম:</legend>
-                            <input type="text" class="input input-sm" name="fatherFirstName" placeholder="" />
+                            <input type="text" class="input input-sm" name="fatherFirstName" placeholder="" required/>
                             <p class="label">First Name</p>
-                            <input type="text" class="input input-sm" name="fatherLastName" placeholder="" />
+                            <input type="text" class="input input-sm" name="fatherLastName" placeholder="" required/>
                             <p class="label">Last Name</p>
 
                             <!-- ===================== -->
                             <legend class="fieldset-legend mt-3">মাতার নাম:</legend>
-                            <input type="text" class="input input-sm" name="motherFirstName" placeholder="" />
+                            <input type="text" class="input input-sm" name="motherFirstName" placeholder="" required/>
                             <p class="label">First Name</p>
-                            <input type="text" class="input input-sm" name="motherLastName" placeholder="" />
+                            <input type="text" class="input input-sm" name="motherLastName" placeholder="" required/>
                             <p class="label">Last Name</p>
 
                             <!-- ===================== -->
@@ -118,13 +118,13 @@
 
                         <!-- ========================== -->
                         <legend class="fieldset-legend mt-3">মোবাইল নং:</legend>
-                        <input type="text" class="input input-sm" name="mobile" placeholder="01" />
+                        <input type="text" class="input input-sm" name="mobile" placeholder="01" required/>
 
                         <!-- =========================== -->
-                        <legend class="fieldset-legend mt-3">NID কার্ডের ছবি দিন:</legend>
+                        <!-- <legend class="fieldset-legend mt-3">NID কার্ডের ছবি দিন:</legend>
                         <div class="">
                             <input type="file" name="nid" class="file-input input-sm" />
-                        </div>
+                        </div> -->
 
                         <!-- ==================== -->
                         <legend class="fieldset-legend mt-3">শর্তাবলি:</legend>
@@ -134,7 +134,7 @@
                             ৩.মাসিক ১০০ টাকা অনুদান প্রদান করব।
                         </p>
                         <div class="mt-5">
-                            <input type="checkbox" name="agreed" class="checkbox" /> I agree <span
+                            <input type="checkbox" name="agreed" class="checkbox" required/> I agree <span
                                 class="text-blue-500">to terms &
                                 conditions</span>.
                         </div>
